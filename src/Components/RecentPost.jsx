@@ -2,9 +2,15 @@ import axios from "axios";
 import React, { use, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { baseUrl, get } from "../services/EndPoint";
+import toast from "react-hot-toast";
 function RecentPost() {
     const navigate = useNavigate()
-    const handlenavigate = (id) => {
+    const handlenavigate = async(id) => {
+        const response=await get(`/public/singlepost/${id}`)
+        const data=response.data
+        if(data.success===false){
+            toast.error(data.message)
+        }
         navigate(`/post/${id}`)
     }
     const [post, setpost] = useState([])
