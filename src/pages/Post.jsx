@@ -52,7 +52,7 @@ function Post() {
   
   return (
     <>
-      {postdata && (
+      {postdata ? (
         <div className='container text-white mt-5 mb-5'>
           <div className='flex flex-wrap mx-5'>
             <div className="w-full">
@@ -91,7 +91,7 @@ function Post() {
 
           </div>
         </div>
-      )}
+      ):<h1 className='text-xl text-red font-bold'>You Need To Login first</h1>}
     </>
   )
 }
