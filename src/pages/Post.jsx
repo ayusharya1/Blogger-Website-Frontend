@@ -91,7 +91,7 @@ function Post() {
 
           </div>
         </div>
-      ):<h1 className='text-xl text-red font-bold'>You Need To Login first</h1>}
+      ):<h1 className='text-xl text-red font-semibold'>You Need To Login first</h1>}
     </>
   )
 }
