@@ -8,6 +8,7 @@ function RecentPost() {
     const handlenavigate = async(id) => {
         const response=await get(`/public/singlepost/${id}`)
         const data=response.data
+        console.log(data);
         if(data.success===false){
             toast.error(data.message)
         }else{
