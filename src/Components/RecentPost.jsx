@@ -54,7 +54,7 @@ function RecentPost() {
                                     <p className="text-sm text-gray-300">  {typeof item.description === "string"
     ? item.description.length > 150
       ? index === 0
-        ? `${item.description.slice(0, 350)}...`
+        ? `${item.description.slice(0, 200)}...`
         : `${item.description.slice(0, 150)}...`
       : item.description
     : "No description available"}</p>
