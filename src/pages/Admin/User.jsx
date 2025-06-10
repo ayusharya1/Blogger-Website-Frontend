@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import { del, get } from '../../services/EndPoint'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 function User() {
   const [users,setUsers]=useState([])
+  const navigate=useNavigate();
   const getUser=async()=>{
     try {
       const response=await get("/dashboard/users")
@@ -29,6 +31,7 @@ function User() {
       const data=response.data
       if(data.success===true){
         toast.success(data.message)
+        navigate(`/`)
       }
       else {
           toast.error('Failed to delete the user.');
