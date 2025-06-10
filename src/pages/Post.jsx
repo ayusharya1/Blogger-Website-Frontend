@@ -29,15 +29,6 @@ function Post() {
     userId:user?.user?._id,
     comment:""
   })
-  //changed part
-    useEffect(() => {
-    if (user?._id) {
-      setValue((prev) => ({
-        ...prev,
-        userId: user._id,
-      }));
-    }
-  }, [user]);
 
   
   const handleSubmit=async(e)=>{
