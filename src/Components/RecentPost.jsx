@@ -22,7 +22,7 @@ function RecentPost() {
 
         }
     }
-    console.log(post);
+    // console.log(post);
 
     //useEffect mein api ko fetch karenge
     useEffect(() => {

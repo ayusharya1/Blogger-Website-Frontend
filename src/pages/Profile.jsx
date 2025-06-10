@@ -35,7 +35,7 @@ function Profile() {
     }
     const response=await patch(`/public/updateuser/${id}`,formData)
      const data = response.data
-     console.log(data);
+    //  console.log(data);
      
       if(data.success==true){
         navigate("/")
