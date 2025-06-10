@@ -49,6 +49,8 @@ contains(...) checks: is the click inside the dropdown?*/
             
         }
     }
+    console.log(user.profile);
+    
   return (<>
     <nav className='flex justify-between items-center p-3 bg-[#1F2936]'>
         <Link to="/"><h1 className='mx-5 text-white text-3xl font-bold'>Bloger</h1></Link>

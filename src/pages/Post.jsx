@@ -23,12 +23,24 @@ function Post() {
     }
   }
   const postId=id
- const user=useSelector((state)=>state.auth)
+ const user = useSelector((state) => state.auth.user)
  const [value,setValue]=useState({
     postId:postId,
-    userId:user.user._id,
+    userId:user.user?._id,
     comment:""
   })
+  //changed part
+    useEffect(() => {
+    if (user?._id) {
+      setValue((prev) => ({
+        ...prev,
+        userId: user._id,
+      }));
+    }
+  }, [user]);
+
+
+  
   const handleSubmit=async(e)=>{
     try {
       e.preventDefault()
@@ -91,7 +103,10 @@ function Post() {
 
           </div>
         </div>
-      ):<h1 className='text-xl text-red font-semibold'>You Need To Login first</h1>}
+      ):<div className=' h-[10rem] m-5 px-3 flex flex-col items-center justify-ceter gap-10'>
+        <h1 className='text-3xl text-red-600 font-semibold'>You Need To SignIn first</h1>
+        <button onClick={()=>navigate("/")} className='bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 px-4 py-2 '>Go Back</button>
+        </div>}
     </>
   )
 }

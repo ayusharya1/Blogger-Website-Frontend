@@ -6,14 +6,7 @@ import toast from "react-hot-toast";
 function RecentPost() {
     const navigate = useNavigate()
     const handlenavigate = async(id) => {
-        const response=await get(`/public/singlepost/${id}`)
-        const data=response.data
-        console.log(data);
-        if(data.success===false){
-            toast.error(data.message)
-        }else{
-            navigate(`/post/${id}`)
-        }
+        navigate(`/post/${id}`)
         
     }
     const [post, setpost] = useState([])
