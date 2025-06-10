@@ -26,12 +26,12 @@ function Post() {
  const user = useSelector((state) => state.auth.user)
  const [value,setValue]=useState({
     postId:postId,
-    userId:user.user?._id,
+    userId:user?.user?._id,
     comment:""
   })
   //changed part
     useEffect(() => {
-    if (user?._id) {
+    if (user._id) {
       setValue((prev) => ({
         ...prev,
         userId: user._id,
