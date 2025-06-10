@@ -79,7 +79,7 @@ function Post() {
              {postdata.comments.map((cmnt,index)=>(
                <div className="bg-gray-500 p-3 rounded mb-3 flex items-center text-black">
                 <img
-                  src={`${baseUrl}/images/${cmnt.userId.profile}`}
+                  src={`${baseUrl}/images/${cmnt.userId?.profile}`}
                   alt="John Doe"
                   className="rounded-full mr-3 w-[50px] h-[50px] object-cover"
                 />
