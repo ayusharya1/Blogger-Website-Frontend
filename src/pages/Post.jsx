@@ -31,7 +31,7 @@ function Post() {
   })
   //changed part
     useEffect(() => {
-    if (user._id) {
+    if (user?._id) {
       setValue((prev) => ({
         ...prev,
         userId: user._id,
