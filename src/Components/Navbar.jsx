@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { baseUrl, post } from '../services/EndPoint'
 import toast from 'react-hot-toast'
 import { RemoveUser } from '../redux/AuthSlice'
-
+import defaultimg from "../assets/defaultimg.webp"
 function Navbar() {
     const [isOpen,setIsopen]=useState(false)
     const [isLogin,setIsLogin]=useState(true)
@@ -60,7 +60,7 @@ contains(...) checks: is the click inside the dropdown?*/
                     height:"50px",
                     cursor:"pointer",
                 }}>
-                    <img className='w-full h-full object-cover' src={`${baseUrl}/images/${user.profile}`} alt="" />
+                    <img className='w-full h-full object-cover' src={user.profile!==null ? `${baseUrl}/images/${user.profile}`:defaultimg} alt="" />
                 </div>
                 {isOpen && 
                 <ul className='absolute right-0 mt-1 w-40 bg-black text-zinc-200 shadow-lg rounded-lg overflow-hidden z-50 px-2 py-1'>

@@ -4,7 +4,7 @@ import { baseUrl, get, post } from '../services/EndPoint';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-
+import defaultimg from "../assets/defaultimg.webp"
 function Post() {
   const { id } = useParams()
   // console.log(id);
@@ -38,7 +38,6 @@ function Post() {
       }));
     }
   }, [user]);
-
 
   
   const handleSubmit=async(e)=>{
@@ -89,7 +88,7 @@ function Post() {
              {postdata.comments.map((cmnt,index)=>(
                <div className="bg-gray-500 p-3 rounded mb-3 flex items-center text-black">
                 <img
-                  src={`${baseUrl}/images/${cmnt.userId.profile}`}
+                  src={userId.profile!==null ? `${baseUrl}/images/${cmnt.userId.profile}`:defaultimg}
                   alt="John Doe"
                   className="rounded-full mr-3 w-[50px] h-[50px] object-cover"
                 />
