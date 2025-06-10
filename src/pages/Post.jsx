@@ -23,7 +23,7 @@ function Post() {
     }
   }
   const postId=id
- const user = useSelector((state) => state.auth.user)
+ const user = useSelector((state) => state.auth)
  const [value,setValue]=useState({
     postId:postId,
     userId:user?.user?._id,
@@ -84,8 +84,8 @@ function Post() {
                   className="rounded-full mr-3 w-[50px] h-[50px] object-cover"
                 />
                 <div>
-                  <h5 className="mb-1 text-lg font-semibold">{cmnt.userId.FullName}</h5>
-                  <p className="mb-0 text-gray-700">{cmnt.comment}</p>
+                  <h5 className="mb-1 text-lg font-semibold">{cmnt.userId?.FullName}</h5>
+                  <p className="mb-0 text-gray-700">{cmnt?.comment}</p>
                 </div>
               </div>
              ))}
