@@ -25,7 +25,8 @@ function Register() {
         });
         const response = await post("/auth/register", formData)
         const data = response.data
-  
+        console.log("regoster data",data);
+        
         if(data.success==true){
           navigate("/")
           toast.success(data.message)

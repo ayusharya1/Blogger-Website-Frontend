@@ -14,7 +14,7 @@ function Post() {
     try {
       const response = await get(`/public/singlepost/${id}`)
       const data = response.data.post
-
+      console.log("post data",data);
       setPostdata(data)
 
     } catch (error) {
@@ -50,7 +50,7 @@ function Post() {
   useEffect(() => {
     singlepost()
   }, [])
-  // console.log(value);
+
   
   return (
     <>
